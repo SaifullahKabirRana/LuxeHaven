@@ -28,14 +28,14 @@ const Navbar = () => {
                         </div>
                         <ul id="nav"
                             tabIndex={0}
-                            className=" menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            className=" menu menu-sm gap-1 dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                            {navLinks}
                         </ul>
                     </div>
                     <a className="-ml-2 md:-ml-0 font-extrabold text-xl md:text-2xl lg:text-3xl font-glitch gap-0">Luxe<span className="text-[#00b795]">Haven</span></a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul id="nav" className="menu menu-horizontal px-1">
+                    <ul id="nav" className="menu menu-horizontal gap-2 px-1">
                     {navLinks}
                     </ul>
                 </div>
