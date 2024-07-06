@@ -3,9 +3,11 @@ import Navbar from "../components/Navbar";
 
 const Root = () => {
     return (
-        <div>
-            <Navbar></Navbar>
-            <Outlet></Outlet>
+        <div className="container  lg:mx-auto">
+            <div className=" mx-4 md:mx-8 lg:mx-auto font-poppins">
+                <Navbar></Navbar>
+                <Outlet></Outlet>
+            </div>
         </div>
     );
 };

@@ -1,9 +1,9 @@
-import React from 'react';
 
 const Home = () => {
     return (
-        <div>
+        <div className='text-4xl'>
             <h2>this is home</h2>
+            
         </div>
     );
 };

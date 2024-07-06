@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        poppins: "'Poppins', sans-serif",
+        glitch: "'Rubik Glitch Pop', system-ui"
+      }
+    },
   },
   plugins: [
     require('daisyui'),
