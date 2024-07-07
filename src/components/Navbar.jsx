@@ -12,10 +12,10 @@ const Navbar = () => {
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
-                        <div tabIndex={0} role="button" className="-ml-6 md:-ml-0 btn btn-ghost  lg:hidden">
+                        <div tabIndex={0} role="button" className="-ml-6 md:-ml-0 btn btn-ghost lg:hidden">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5"
+                                className="h-7 w-7"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor">
@@ -32,7 +32,7 @@ const Navbar = () => {
                            {navLinks}
                         </ul>
                     </div>
-                    <a className="-ml-2 md:-ml-0 font-extrabold text-xl md:text-2xl lg:text-3xl font-glitch gap-0">Luxe<span className="text-[#00b795]">Haven</span></a>
+                    <a className="-ml-2 md:-ml-0 font-extrabold text-2xl md:text-3xl lg:text-4xl font-glitch gap-0">Luxe<span className="text-[#00b795]">Haven</span></a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul id="nav" className="menu menu-horizontal gap-2 px-1">
@@ -42,9 +42,7 @@ const Navbar = () => {
                 <div className="navbar-end">
                     <button className="border btn text-[14px] md:text-[16px] px-5 md:px-8 text-white font-s#00b795 bg-[#00b795]">Login</button>
                 </div>
-                <div className="navbar-end">
-                    <button className="border btn text-[14px] md:text-[16px] px-5 md:px-8 text-white font-s#00b795 bg-[#00b795]">Login</button>
-                </div>
+                
             </div>
         </div>
     );
