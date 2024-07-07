@@ -83,7 +83,7 @@
         "price": "$12,000,000",
         "status": "sale",
         "area": "10000 sq ft",
-        "location": "Beverly Hills, CA",
+        "location": "Beverly Hills",
         "facilities": [
             "living room",
             "swimming pool",
@@ -102,7 +102,7 @@
         "price": "$5,000 per night",
         "status": "rent",
         "area": "5000 sq ft",
-        "location": "Bora Bora, French Polynesia",
+        "location": "French Polynesia",
         "facilities": [
             "living room",
             "swimming pool",

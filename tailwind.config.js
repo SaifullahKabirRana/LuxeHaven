@@ -8,7 +8,8 @@ export default {
     extend: {
       fontFamily: {
         poppins: "'Poppins', sans-serif",
-        glitch: "'Rubik Glitch Pop', system-ui"
+        glitch: "'Rubik Glitch Pop', system-ui",
+        roboto: "'Roboto', sans-serif"
       }
     },
   },
