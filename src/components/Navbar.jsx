@@ -42,6 +42,9 @@ const Navbar = () => {
                 <div className="navbar-end">
                     <button className="border btn text-[14px] md:text-[16px] px-5 md:px-8 text-white font-s#00b795 bg-[#00b795]">Login</button>
                 </div>
+                <div className="navbar-end">
+                    <button className="border btn text-[14px] md:text-[16px] px-5 md:px-8 text-white font-s#00b795 bg-[#00b795]">Login</button>
+                </div>
             </div>
         </div>
     );
