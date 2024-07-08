@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
-import { VscGithub } from "react-icons/vsc";
 import SocialLogin from "./SocialLogin/SocialLogin";
 
 const Register = () => {

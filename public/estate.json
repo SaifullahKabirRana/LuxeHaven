@@ -15,8 +15,9 @@
             "Rooftop terrace",
             "Private elevator"
         ],
-        "image": "https://i.ibb.co/6sPjmvC/photorealistic-wooden-house-with-timber-structure.jpg"
-        
+        "image": "https://i.ibb.co/6sPjmvC/photorealistic-wooden-house-with-timber-structure.jpg",
+        "latitude": 25.790654,
+        "longitude": -80.130045
     },
     {
         "id": 2,
@@ -34,8 +35,9 @@
             "Private beach",
             "Home theater"
         ],
-        "image": "https://i.ibb.co/7C5KbbS/beachfront-villas.jpg"
-        
+        "image": "https://i.ibb.co/7C5KbbS/beachfront-villas.jpg",
+        "latitude": 34.025921,
+        "longitude": -118.779757
     },
     {
         "id": 3,
@@ -53,8 +55,9 @@
             "Spa",
             "Ski-in/ski-out access"
         ],
-        "image": "https://i.ibb.co/CQWT07H/mountain-resort.jpg"
-        
+        "image": "https://i.ibb.co/CQWT07H/mountain-resort.jpg",
+        "latitude": 39.190945,
+        "longitude": -106.820949
     },
     {
         "id": 4,
@@ -72,8 +75,9 @@
             "Private dock",
             "Helicopter pad"
         ],
-        "image": "https://i.ibb.co/b6Qd3Mc/Laucala-Island-Fiji-Private-Island-Resorts-Destination-Deluxe.jpg"
-        
+        "image": "https://i.ibb.co/b6Qd3Mc/Laucala-Island-Fiji-Private-Island-Resorts-Destination-Deluxe.jpg",
+        "latitude": 24.698185,
+        "longitude": -77.941672
     },
     {
         "id": 5,
@@ -91,8 +95,9 @@
             "Home theater",
             "Tennis court"
         ],
-        "image": "https://i.ibb.co/2qrwHbg/mension.jpg"
-        
+        "image": "https://i.ibb.co/2qrwHbg/mension.jpg",
+        "latitude": 34.069651,
+        "longitude": -118.405126
     },
     {
         "id": 6,
@@ -110,7 +115,8 @@
             "Beachfront access",
             "Spa"
         ],
-        "image": "https://i.ibb.co/PzkQ5LQ/beach-resort.jpg"
-        
+        "image": "https://i.ibb.co/PzkQ5LQ/beach-resort.jpg",
+        "latitude": -16.500413,
+        "longitude": -151.74149
     }
 ]
