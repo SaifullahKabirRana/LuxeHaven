@@ -1,13 +1,16 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { PiMapPinAreaFill } from "react-icons/pi";
 import { TiLocationOutline } from "react-icons/ti";
+import { FaShoppingCart } from "react-icons/fa";
 
 const PropertyDetails = () => {
     const properties = useLoaderData();
     const { id } = useParams();
     const property = properties.find(property => property.id == id);
+
+    
     return (
-        <div className="mt-4 md:m-7 lg:mt-10  ">
+        <div className="animate__animated animate__fadeInDown mt-4 md:m-7 lg:mt-10  ">
             <div className="shadow-xl  rounded-xl mx-auto lg:w-[1200px]">
                 <div className="px-5 md:px-5  lg:px-8 py-8">
                 <div className='mt-5 md:mt-7 lg:mt-9  ml-1 lg:-ml-1 rounded-md px-3 md:px-4 lg:px-8 -rotate-45 font-roboto bg-[#00b795] text-white font-semibold text-[15px] md:text-[20px] uppercase p-1 absolute'>
@@ -35,6 +38,11 @@ const PropertyDetails = () => {
                                 }
                             </ul>
                         </div>
+                        <div  className="mt-5 md:mt-6 lg:mt-8 ">
+                            <button className="btn  text-[#00b795] btn-outline border-[#00b795]"><FaShoppingCart className="text-xl" /> Add To Cart</button>
+                            
+                        </div>
+                        
                     </div>
                 </div>
             </div>

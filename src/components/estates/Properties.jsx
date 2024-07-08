@@ -9,7 +9,7 @@ const Properties = () => {
         .then(data => setProperty(data))
     },[])
     return (
-        <div className="mt-6 md:mt-8 lg:mt-14">
+        <div className="animate__animated animate__bounceInUp mt-6 md:mt-8 lg:mt-14">
             <div className="text-center">
                 <h2 className="text-xl md:text-2xl lg:text-3xl font-bold    ">Estate</h2>
                 <p className="text-[#131313B3] text-[12px] md:text-[17px] mt-1 md:mt-3">Find Your Perfect Luxury Home with LuxeHaven:  <br />Excellence in Every Detail</p>

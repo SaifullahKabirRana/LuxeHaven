@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import 'animate.css';
 
 const Navbar = () => {
 
@@ -8,7 +9,7 @@ const Navbar = () => {
     <li><NavLink to='/register'>Register</NavLink></li>
     </>
     return (
-        <div className="relative z-10 mt-2 md:mt-3 lg:mt-5">
+        <div className="animate__animated animate__backInLeft relative z-10 mt-2 md:mt-3 lg:mt-5">
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -32,7 +33,7 @@ const Navbar = () => {
                            {navLinks}
                         </ul>
                     </div>
-                    <a className="-ml-2 md:-ml-0 font-extrabold text-2xl md:text-3xl lg:text-4xl font-glitch gap-0">Luxe<span className="text-[#00b795]">Haven</span></a>
+                    <a className=" -ml-2 md:-ml-0 font-extrabold text-2xl md:text-3xl lg:text-4xl font-glitch gap-0">Luxe<span className="text-[#00b795]">Haven</span></a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul id="nav" className="menu menu-horizontal gap-2 px-1">

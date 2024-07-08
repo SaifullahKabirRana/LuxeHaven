@@ -9,7 +9,7 @@ import '../header/swiper.css';
 
 const Banner = () => {
     return (
-        <div className=' mt-4 md:mt-5 lg:mt-8'>
+        <div className='animate__animated animate__zoomInDown mt-4 md:mt-5 lg:mt-8'>
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
