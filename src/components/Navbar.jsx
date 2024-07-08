@@ -8,7 +8,7 @@ const Navbar = () => {
     <li><NavLink to='/register'>Register</NavLink></li>
     </>
     return (
-        <div className="mt-2 md:mt-3 lg:mt-5">
+        <div className="relative z-10 mt-2 md:mt-3 lg:mt-5">
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
