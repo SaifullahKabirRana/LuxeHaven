@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const Property = ({ property }) => {
-    const { estate_title, segment_name, price, status, area, location, image } = property;
+    const { id, estate_title, segment_name, price, status, area, location, image } = property;
     return (
         <div>
             <section className='border border-[#13131326] rounded-2xl shadow-md transition-transform transform hover:scale-105 duration-300 '>
@@ -12,7 +13,7 @@ const Property = ({ property }) => {
                     <div className='top-7 md:top-10 ml-2 rounded-md px-3 font-roboto bg-[#00b795] text-white text-[14px] md:text-[16px] uppercase p-1 absolute'>
                         <p>{status}</p>
                     </div>
-                    
+
                     <h2 className='mt-3 md:mt-5 text-lg md:text-xl lg:text-[22px] font-semibold text-[#131313] '>{estate_title}</h2>
                     <h3 className='mt-1 font-roboto md:mt-2 text-[#131313B3] font-medium text-[16px] mb-1 md:text-[18px]'>{segment_name}</h3>
                     <div>
@@ -23,9 +24,11 @@ const Property = ({ property }) => {
                     </div>
                     <p className='mt-1 md:mt-2 text-lg md:text-xl font-semibold font-roboto'>{price}</p>
 
-                    <button className='btn  font-semibold text-[15px] md:text-lg mt-2 md:mt-5 text-white bg-gradient-to-r from-[#b0d800] to-[#00b795]'>View Property</button>
-                    
-                    
+                    <Link to={`/property/${id}`}>
+                        <button className='btn  font-semibold text-[15px] md:text-lg mt-2 md:mt-5 text-white bg-gradient-to-r from-[#b0d800] to-[#00b795]'>View Property</button>
+                    </Link>
+
+
                 </div>
             </section>
         </div>
