@@ -1,13 +1,35 @@
 import { Link } from "react-router-dom";
 import SocialLogin from "./SocialLogin/SocialLogin";
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Register = () => {
+    const { createUser } = useContext(AuthContext);
+    
+
+    const handleRegister = e => {
+        e.preventDefault();
+        const form = new FormData(e.currentTarget);
+        const name = form.get('name');
+        const photo = form.get('photo');
+        const email = form.get('email');
+        const password = form.get('password');
+        console.log(name, photo, email, password);
+
+        createUser(email, password)
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
     return (
         <div className="animate__animated animate__zoomIn mx-2 md:mx-0">
             <div className=" mt-7 md:mt-10 lg:mt-16 pt-6 md:pt-10 lg:pt-16 pb-4 md:pb-6 lg:pb-8 shadow-lg bg-[#F3F3F3] rounded-md md:max-w-[750px] mx-auto">
                 <h2 className="text-[#403F3F] text-[20px] md:text-[26px] text-center font-semibold">Register your account</h2>
                 <div className="md:w-3/4 mx-auto -mt-2">
-                    <form className="card-body">
+                    <form onSubmit={handleRegister} className="card-body">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text text-[#403F3F] font-semibold text-[16px] md:text-[20px]">Name</span>

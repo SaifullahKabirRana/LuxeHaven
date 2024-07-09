@@ -58,7 +58,7 @@ const PropertyDetails = () => {
                                     />
                                     <Marker position={[property.latitude, property.longitude]}>
                                         <Popup>
-                                            A pretty CSS3 popup. <br /> Easily customizable.
+                                            {property.estate_title                }
                                         </Popup>
                                     </Marker>
                                 </MapContainer>

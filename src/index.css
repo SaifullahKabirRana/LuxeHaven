@@ -16,3 +16,16 @@
     height: 100%;
     width: 100%
  }
+ 
+ .banner-1 {
+    background-image: linear-gradient(180deg,#03071280,#03071200),url('./assets/penthouse.jpg');
+ }
+ .banner-2 {
+    background-image: linear-gradient(180deg,#03071280,#03071200),url('./assets/mension.jpg');
+ }
+ .banner-3 {
+    background-image: linear-gradient(180deg,#03071280,#03071200),url('./assets/oceanView.jpg');
+ }
+ .banner-4 {
+    background-image: linear-gradient(180deg,#03071280,#03071200),url('./assets/beachfront-villas.jpg');
+ }
