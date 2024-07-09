@@ -25,7 +25,6 @@ const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
-            console.log(currentUser, "currentuser")
             setUser(currentUser);
         });
         return () => {
@@ -50,7 +49,7 @@ const AuthProvider = ({ children }) => {
 };
 
 AuthProvider.propTypes = {
-
+    children: PropTypes.node,
 };
 
 export default AuthProvider;

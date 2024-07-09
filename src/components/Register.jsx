@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "./SocialLogin/SocialLogin";
 import { useContext, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
@@ -6,8 +6,9 @@ import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, logOut } = useContext(AuthContext);
     const [registerError, setRegisterError] = useState("");
+    const navigate = useNavigate();
 
     const handleRegister = e => {
         e.preventDefault();
@@ -36,7 +37,12 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 console.log(result.user);
-                return toast.success('Successfully Sign Up');
+                toast.success('Successfully Sign Up');
+                logOut();
+                setTimeout(() =>{
+                    navigate('/login');
+                },1500)
+
             })
             .catch(error => {
                 setRegisterError(error.message);
