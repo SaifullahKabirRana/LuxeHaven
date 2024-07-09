@@ -15,10 +15,7 @@ const Login = () => {
         const email = form.get('email');
         const password = form.get('password')
 
-
-
         setLoginError('')
-
         signIn(email, password)
             .then(result => {
                 console.log(result.user)
