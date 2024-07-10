@@ -16,6 +16,9 @@ const Navbar = () => {
 
     const navLinks = <>
         <li><NavLink to='/'>Home</NavLink></li>
+        {
+            user && <li><NavLink to='/profile'>Update Profile</NavLink></li>
+        }
         <li><NavLink to='/login'>Login</NavLink></li>
         <li><NavLink to='/register'>Register</NavLink></li>
     </>
@@ -52,10 +55,13 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end md:gap-2">
-                    <div className="dropdown dropdown-hover">
+                    {
+                       user && 
+                       <div className="dropdown dropdown-hover">
                         <div tabIndex={0} role="button" className=" ">
                             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                 <div className="w-8 md:w-11  rounded-full ">
+                                    {/* <img src={user?.photoURL ? user.photoURL : userDefaultPic} alt="" /> */}
                                     {
                                         user &&
                                         <>
@@ -70,23 +76,25 @@ const Navbar = () => {
                                 </div>
                             </div>
                         </div>
-                        <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                        <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-[155px] md:w-[220px] p-2 shadow">
                             {
                                 user && <>
                                     <div className="flex gap-1 md:gap-2 items-center md:p-1 ">
-                                        <img src={user?.photoURL} alt="" className="w-8 md:w-12 h-8 md:h-12 rounded-lg dark:bg-gray-500" />
+                                        <img src={user?.photoURL? user.photoURL : userDefaultPic} alt="" className="w-10 md:w-14 h-11 md:h-14 rounded-lg dark:bg-gray-500" />
                                         <div>
-                                            <h2 className=" font-semibold">Leroy Jenkins</h2>
+                                            <h2 className="mt-1 text-[12px] font-semibold">{user?.displayName}</h2>
                                             <span className="flex items-center ">
-                                                <Link to='/login'  className="text-[10px] md:text-[12px] hover:underline dark:text-gray-600">View profile</Link>
+                                                <Link to='/profile'  className="text-[10px] md:text-[12px] hover:underline dark:text-gray-600">View profile</Link>
                                             </span>
                                         </div>
                                     </div>
                                 </>
                             }
                         </ul>
-                    </div>
-
+                    </div> 
+                    }
+                
+                
                     {
                         user ?
                             <button onClick={handleLogOut} className="border btn btn-sm md:btn-md text-[14px] md:text-[16px] px-5 md:px-8 text-white font-s#00b795 bg-[#00b795]">Log Out</button>

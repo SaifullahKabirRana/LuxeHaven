@@ -6,6 +6,7 @@ import Register from "../components/Register";
 import ErrorPages from "../components/ErrorPages";
 import PropertyDetails from "../components/estates/PropertyDetails";
 import PrivateRoute from "./PrivateRoute";
+import UpdateProfile from "../components/UpdateProfile";
 
 
 
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
                 path: '/property/:id',
                 element: <PrivateRoute><PropertyDetails></PropertyDetails></PrivateRoute>,
                 loader: () => fetch('/estate.json')
+            },
+            {
+                path: '/profile',
+                element: <PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>
             },
             {
                 path: '/login',
