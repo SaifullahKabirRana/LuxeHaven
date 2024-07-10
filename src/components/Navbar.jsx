@@ -2,10 +2,11 @@ import { Link, NavLink } from "react-router-dom";
 import 'animate.css';
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
+import userDefaultPic from '../../src/assets/user.png'
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
-    console.log(user, "from nabbar")
+
 
     const handleLogOut = () => {
         logOut()
@@ -50,7 +51,24 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <div className="navbar-end">
+                <div className="navbar-end md:gap-2">
+                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                        <div className="w-8 md:w-11  rounded-full ">
+                            {
+                                user &&
+                                <>
+                                    {
+                                        user?.photoURL ?
+                                            <img className="border-2  border-black rounded-full" alt="image" src={user.photoURL} />
+                                            :
+                                            <img className=" " alt="image" src={userDefaultPic} />
+
+                                    }
+                                </>
+
+                            }
+                        </div>
+                    </div>
                     {
                         user ?
                             <button onClick={handleLogOut} className="border btn btn-sm md:btn-md text-[14px] md:text-[16px] px-5 md:px-8 text-white font-s#00b795 bg-[#00b795]">Log Out</button>
