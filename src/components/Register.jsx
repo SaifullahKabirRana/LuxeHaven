@@ -4,11 +4,13 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { getAuth, updateProfile } from "firebase/auth";
 
 const Register = () => {
     const { createUser, logOut } = useContext(AuthContext);
     const [registerError, setRegisterError] = useState("");
     const navigate = useNavigate();
+    const auth = getAuth();
 
     const handleRegister = e => {
         e.preventDefault();
@@ -17,7 +19,6 @@ const Register = () => {
         const photo = form.get('photo');
         const email = form.get('email');
         const password = form.get('password');
-        console.log(name, photo, email, password);
 
         // password verification
         if (password.length < 6) {
@@ -39,10 +40,13 @@ const Register = () => {
                 console.log(result.user);
                 toast.success('Successfully Sign Up');
                 logOut();
-                setTimeout(() =>{
+                setTimeout(() => {
                     navigate('/login');
-                },1500)
-
+                }, 1500)
+                updateProfile(auth.currentUser, 
+                    { displayName: name, photoURL: photo })
+                    .then()
+                    .catch();
             })
             .catch(error => {
                 setRegisterError(error.message);
