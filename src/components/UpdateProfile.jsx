@@ -3,9 +3,31 @@ import { AuthContext } from "../providers/AuthProvider";
 import userDefaultPic from '../assets/user.png';
 import { HiOutlineMail } from "react-icons/hi";
 import { FaRegEdit } from "react-icons/fa";
+import { getAuth, updateProfile } from "firebase/auth";
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const UpdateProfile = () => {
-    const { user } = useContext(AuthContext);
+    const { user} = useContext(AuthContext);
+    const auth = getAuth();
+    
+
+    const handleUpdate = e => {
+        e.preventDefault();
+        const form = new FormData(e.currentTarget);
+        const name = form.get('name');
+        const photo = form.get('photo');
+
+        if (name.length > 0 && photo.length > 0) {
+            updateProfile(auth.currentUser, { displayName: name, photoURL: photo })
+                .then(toast.success('Successfully Update'))
+                .catch()
+        }
+
+
+    }
+
     return (
         <div>
             <div className=" flex justify-center mt-8 md:mt-14">
@@ -33,21 +55,21 @@ const UpdateProfile = () => {
                                 </form>
                                 <div>
                                     <div className="px-4">
-                                        <form className="">
+                                        <form onSubmit={handleUpdate} className="">
                                             <div className="form-control">
                                                 <label className="label">
                                                     <span className="label-text text-[#403F3F] font-semibold text-[16px] md:text-[20px]">Name</span>
                                                 </label>
                                                 <input type="name" name="name" placeholder="Name" className="input input-bordered"
-                                                defaultValue={user.displayName} required />
+                                                    defaultValue={user.displayName} required />
                                             </div>
                                             <div className="form-control">
                                                 <label className="label">
                                                     <span className="label-text text-[#403F3F] font-semibold text-[16px] md:text-[20px]">Photo URL</span>
                                                 </label>
-                                                <input type="text" name="photo" placeholder="Photo URL" 
-                                                defaultValue={user.photoURL}
-                                                className="input input-bordered"
+                                                <input type="text" name="photo" placeholder="Photo URL"
+                                                    defaultValue={user.photoURL}
+                                                    className="input input-bordered"
                                                 />
 
                                             </div>
@@ -61,8 +83,22 @@ const UpdateProfile = () => {
                             </div>
                         </dialog>
                     </div>
+
                 </div>
             </div>
+            <ToastContainer className=''
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            >
+            </ToastContainer>
         </div>
     );
 };
