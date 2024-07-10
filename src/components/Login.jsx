@@ -29,7 +29,9 @@ const Login = () => {
                 setLoginError(error.message)
 
             })
+            
     }
+    
     return (
         <div>
             <div className="animate__animated animate__zoomIn mx-2 md:mx-0">

@@ -52,23 +52,41 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end md:gap-2">
-                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                        <div className="w-8 md:w-11  rounded-full ">
-                            {
-                                user &&
-                                <>
+                    <div className="dropdown dropdown-hover">
+                        <div tabIndex={0} role="button" className=" ">
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                <div className="w-8 md:w-11  rounded-full ">
                                     {
-                                        user?.photoURL ?
-                                            <img className="border-2  border-black rounded-full" alt="image" src={user.photoURL} />
-                                            :
-                                            <img className=" " alt="image" src={userDefaultPic} />
-
+                                        user &&
+                                        <>
+                                            {
+                                                user?.photoURL ?
+                                                    <img className="border-2  border-gray-300 rounded-full" alt="image" src={user.photoURL} />
+                                                    :
+                                                    <img className=" " alt="image" src={userDefaultPic} />
+                                            }
+                                        </>
                                     }
-                                </>
-
-                            }
+                                </div>
+                            </div>
                         </div>
+                        <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                            {
+                                user && <>
+                                    <div className="flex gap-1 md:gap-2 items-center md:p-1 ">
+                                        <img src={user?.photoURL} alt="" className="w-8 md:w-12 h-8 md:h-12 rounded-lg dark:bg-gray-500" />
+                                        <div>
+                                            <h2 className=" font-semibold">Leroy Jenkins</h2>
+                                            <span className="flex items-center ">
+                                                <Link to='/login'  className="text-[10px] md:text-[12px] hover:underline dark:text-gray-600">View profile</Link>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </>
+                            }
+                        </ul>
                     </div>
+
                     {
                         user ?
                             <button onClick={handleLogOut} className="border btn btn-sm md:btn-md text-[14px] md:text-[16px] px-5 md:px-8 text-white font-s#00b795 bg-[#00b795]">Log Out</button>
