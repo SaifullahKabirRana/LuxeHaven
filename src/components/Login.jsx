@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "./SocialLogin/SocialLogin";
 import { useContext, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
@@ -8,6 +8,8 @@ import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
     const { signIn } = useContext(AuthContext);
     const [loginError, setLoginError] = useState('');
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const handleLogin = e => {
         e.preventDefault();
@@ -19,7 +21,9 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 console.log(result.user)
-                return toast.success('Successfully Sign Up');
+                toast.success('Successfully Sign Up');
+                navigate(location?.state ? location.state : '/');
+
             })
             .catch(error => {
                 setLoginError(error.message)
