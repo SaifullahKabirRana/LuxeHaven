@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 const Root = () => {
+    
     return (
         <div>
             <div className="container  lg:mx-auto">
