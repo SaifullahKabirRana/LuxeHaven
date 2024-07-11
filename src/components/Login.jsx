@@ -6,6 +6,7 @@ import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { VscEye } from "react-icons/vsc";
 import { VscEyeClosed } from "react-icons/vsc";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
@@ -37,6 +38,9 @@ const Login = () => {
     
     return (
         <div>
+            <Helmet>
+                <title>LuxeHaven - Login</title>
+            </Helmet>
             <div className="animate__animated animate__zoomIn mx-2 md:mx-0">
                 <div className="mt-7 md:mt-10 lg:mt-16 pt-6 md:pt-10 lg:pt-16 pb-4 md:pb-6 lg:pb-8 shadow-lg bg-[#F3F3F3] rounded-md md:max-w-[750px] mx-auto">
                     <h2 className="text-[#403F3F] text-[20px] md:text-[26px] text-center font-semibold">Login your account</h2>

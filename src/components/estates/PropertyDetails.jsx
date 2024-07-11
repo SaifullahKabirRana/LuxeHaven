@@ -5,6 +5,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import '../../index.css'
+import { Helmet } from "react-helmet-async";
 
 
 const PropertyDetails = () => {
@@ -16,6 +17,9 @@ const PropertyDetails = () => {
 
     return (
         <div className="animate__animated animate__fadeInDown mt-4 md:m-7 lg:mt-10  ">
+           <Helmet>
+                <title>LuxeHaven - PropertyDetails</title>
+            </Helmet>
             <div className="shadow-xl  rounded-xl mx-auto lg:w-[1200px]">
                 <div className="px-5 md:px-5  lg:px-8 py-8">
                     <div className='mt-5 md:mt-7 lg:mt-9  ml-1 lg:-ml-1 rounded-md px-3 md:px-4 lg:px-8 -rotate-45 font-roboto bg-[#00b795] text-white font-semibold text-[15px] md:text-[20px] uppercase p-1 absolute'>

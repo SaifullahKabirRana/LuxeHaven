@@ -1,7 +1,11 @@
+import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
     return (
         <div className="mt-6 md:mt-14">
+            <Helmet>
+                <title>LuxeHaven - Contact</title>
+            </Helmet>
             <section className="py-1 md:py-14 shadow-lg rounded-xl">
                 <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
                     <div className="py-6 md:py-0 md:px-6">

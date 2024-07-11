@@ -8,6 +8,7 @@ import PropertyDetails from "../components/estates/PropertyDetails";
 import PrivateRoute from "./PrivateRoute";
 import UpdateProfile from "../components/UpdateProfile";
 import Contact from "../components/Contact";
+import Team from "../components/Team";
 
 
 
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
             {
                 path: '/contact',
                 element: <PrivateRoute><Contact></Contact></PrivateRoute>
+            },
+            {
+                path: '/team',
+                element: <PrivateRoute><Team></Team></PrivateRoute>
             },
             {
                 path: '/login',

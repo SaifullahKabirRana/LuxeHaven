@@ -6,6 +6,7 @@ import { FaRegEdit } from "react-icons/fa";
 import { getAuth, updateProfile } from "firebase/auth";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet-async";
 
 
 const UpdateProfile = () => {
@@ -30,6 +31,9 @@ const UpdateProfile = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>LuxeHaven - UpdateProfile</title>
+            </Helmet>
             <div className=" flex justify-center mt-8 md:mt-14">
                 <div className="flex flex-col justify-center p-8 px-12 md:px-20 shadow-md rounded-xl  dark:bg-gray-50 dark:text-gray-800">
                     <img src={user?.photoURL ? user.photoURL : userDefaultPic} className="w-[200px] md:w-[250px] h-[200px] md:h-[250px] mx-auto rounded-full dark:bg-gray-500 aspect-square" />
