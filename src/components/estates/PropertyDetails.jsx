@@ -46,7 +46,7 @@ const PropertyDetails = () => {
                                     </ul>
                                 </div>
                                 <div className="mt-5 md:mt-6 lg:mt-8 ">
-                                    <button className="btn  text-[#00b795] btn-outline border-[#00b795]"><FaShoppingCart className="text-xl" /> Add To Cart</button>
+                                    <button className="btn text-[#00b795] btn-outline border-[#00b795]"><FaShoppingCart className="text-xl" /> Add To Cart</button>
 
                                 </div>
                             </div>

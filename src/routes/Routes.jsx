@@ -7,6 +7,7 @@ import ErrorPages from "../components/ErrorPages";
 import PropertyDetails from "../components/estates/PropertyDetails";
 import PrivateRoute from "./PrivateRoute";
 import UpdateProfile from "../components/UpdateProfile";
+import Contact from "../components/Contact";
 
 
 
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
             {
                 path: '/profile',
                 element: <PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>
+            },
+            {
+                path: '/contact',
+                element: <PrivateRoute><Contact></Contact></PrivateRoute>
             },
             {
                 path: '/login',
