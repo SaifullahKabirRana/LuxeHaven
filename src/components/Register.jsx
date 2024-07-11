@@ -5,10 +5,13 @@ import { AuthContext } from "../providers/AuthProvider";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { getAuth, updateProfile } from "firebase/auth";
+import { VscEye } from "react-icons/vsc";
+import { VscEyeClosed } from "react-icons/vsc";
 
 const Register = () => {
     const { createUser, logOut } = useContext(AuthContext);
     const [registerError, setRegisterError] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
     const auth = getAuth();
 
@@ -43,7 +46,7 @@ const Register = () => {
                 setTimeout(() => {
                     navigate('/login');
                 }, 1500)
-                updateProfile(auth.currentUser, 
+                updateProfile(auth.currentUser,
                     { displayName: name, photoURL: photo })
                     .then()
                     .catch();
@@ -70,7 +73,7 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text text-[#403F3F] font-semibold text-[16px] md:text-[20px]">Photo URL</span>
                                 </label>
-                                <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered "  />
+                                <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered " />
                             </div>
                             <div className="form-control">
                                 <label className="label">
@@ -82,7 +85,12 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text text-[#403F3F] font-semibold text-[16px] md:text-[20px]">Password</span>
                                 </label>
-                                <input type="password" name="password" placeholder="Password" className="input input-bordered " required />
+                                <div className="flex relative">
+                                <input
+                                    type={showPassword ? "text" : "password"}
+                                    name="password" placeholder="Password" className="w-full input input-bordered " required/>
+                                    <span className="absolute right-5 top-3 text-xl md:text-2xl " onClick={() => setShowPassword(!showPassword)}>{showPassword ? <VscEyeClosed /> : <VscEye />}</span>
+                                </div>
 
                             </div>
                             <div className="ml-2">
