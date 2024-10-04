@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import userDefaultPic from '../assets/user.png';
 import { HiOutlineMail } from "react-icons/hi";
@@ -12,6 +12,7 @@ import { Helmet } from "react-helmet-async";
 const UpdateProfile = () => {
     const { user} = useContext(AuthContext);
     const auth = getAuth();
+    const [control, setControl] = useState(false)
     
 
     const handleUpdate = e => {
@@ -22,8 +23,17 @@ const UpdateProfile = () => {
 
         if (name.length > 0 && photo.length > 0) {
             updateProfile(auth.currentUser, { displayName: name, photoURL: photo })
-                .then(toast.success('Successfully Update'))
-                .catch()
+                .then(result => {
+                 console.log(result);
+                 toast.success('Successfully Update');
+                 
+                // refresh data
+                 setControl(!control)
+                })
+                .catch(error => {
+                    console.log(error.message);
+                })
+                // console.log(updateProfile);
         }
 
 
@@ -36,7 +46,7 @@ const UpdateProfile = () => {
             </Helmet>
             <div className=" flex justify-center mt-8 md:mt-14">
                 <div className="flex flex-col justify-center p-8 px-12 md:px-20 shadow-md rounded-xl  dark:bg-gray-50 dark:text-gray-800">
-                    <img src={user?.photoURL ? user.photoURL : userDefaultPic} className="w-[200px] md:w-[250px] h-[200px] md:h-[250px] mx-auto rounded-full dark:bg-gray-500 aspect-square" />
+                    <img src={user?.photoURL ? user.photoURL : userDefaultPic} className="w-[200px] md:w-[250px] h-[200px] md:h-[250px] mx-auto rounded-full dark:bg-gray-500  aspect-square" />
                     <div className=" space-y-4 text-center divide-y dark:divide-gray-300">
                         <div className="my-2 space-y-1">
                             <h2 className="text-lg md:text-2xl font-semibold ">{user?.displayName}</h2>
